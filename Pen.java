@@ -60,21 +60,27 @@ public class Pen
    }
    
    /**
-    * Writes words with the pen
+    * Writes words with the pen and prints an error message if capped or success message and reminder if uncapped
     * 
     * @param number of words to be written
-    * @return either an error message if capped or success message and reminder if uncapped
     */
-   public String writeWords(int words)
+   public void writeWords(int words)
    {
        if (!capped)
        {
-         wordsLeft = wordsLeft - words;  
-         return "Look at you-- the next Shakespeare! Remember to cap your pen so it doesn't dry out!";
+            if (wordsLeft <= 0)
+            {
+                System.out.println("Error-- pen is out of ink.");
+            }
+            else
+            {
+                wordsLeft = wordsLeft - words;  
+                System.out.println("Look at you-- the next Shakespeare! Remember to cap your pen so it doesn't dry out!");
+            }
        }
        else
        {
-           return "Error-- uncap your pen!";
+           System.out.println("Error-- uncap your pen!");
        }
    }
    

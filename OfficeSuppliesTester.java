@@ -1,33 +1,33 @@
 
 /**
- * Write a description of class OfficeSuppliesTester here.
+ * Tester for each office supply.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Sharon Chou & Kamryn Chan
+ * @version 2023-01-30
  */
 public class OfficeSuppliesTester
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class OfficeSuppliesTester
-     */
-    public OfficeSuppliesTester()
+    public static void main (String[] args)
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        System.out.println("Testing the pen!");
+        Pen p = new Pen();
+        System.out.println("Words left: " + p.getWordsLeft());
+        System.out.println("Trying to write now...");
+        p.writeWords(10);
+        System.out.println("Uncapping the pen now so that I can actually write... Writing 20 words");
+        p.uncap();
+        p.writeWords(20);
+        System.out.println("Words left: " + p.getWordsLeft() + ". Capping the pen.");
+        p.cap();
+        p.uncap();
+        System.out.println("Uncapping to write 30 words!");
+        p.writeWords(30);
+        System.out.println("Words left: " + p.getWordsLeft() + " Better scribble a bit.");
+        p.scribble();
+        System.out.println("Words left: " + p.getWordsLeft());
+        p.getCapped();
+        System.out.println("You didn't cap your pen after writing! Minus 5 words. Words left: " + p.getWordsLeft());
+        System.out.println("Trying to write even though I have no ink...");
+        p.writeWords(10);
     }
 }
