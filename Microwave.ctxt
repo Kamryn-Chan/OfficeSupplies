@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Microwave
+comment0.text=\nClass\ Microwave\ models\ a\ microwave\ that\ is\ so\ high\ tech\ it\ can\ recognize\ the\ food\ inputted\ and\ set\ the\ time\ accordingly.\n\n\ @Sharon\ Chou\ &\ Kamryn\ Chan\n\ @2023-01-30\n
+comment1.params=
+comment1.target=Microwave()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Microwave\n
+comment2.params=thing
+comment2.target=void\ putIn(Food)
+comment2.text=\n\ Sets\ the\ content\ of\ the\ microwave\n\ \n\ @param\ Food\ object\n
+comment3.params=
+comment3.target=void\ microwave()
+comment3.text=\n\ Starts\ time,\ which\ is\ set\ based\ on\ what\ food\ is\ in\ the\ microwave,\ displays\ the\ countdown,\ and\ tells\ the\ user\ when\ the\ microwave\ is\ done.\n\ \n
+numComments=4

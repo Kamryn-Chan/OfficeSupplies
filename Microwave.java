@@ -1,33 +1,40 @@
 
 /**
- * Write a description of class Microwave here.
+ *Class Microwave models a microwave that is so high tech it can recognize the food inputted and set the time accordingly.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Sharon Chou & Kamryn Chan
+ * @2023-01-30
  */
 public class Microwave
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int timeSet;
+    private Food content;
 
     /**
      * Constructor for objects of class Microwave
      */
     public Microwave()
     {
-        // initialise instance variables
-        x = 0;
+        timeSet = 0;
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Sets the content of the microwave
+     * 
+     * @param Food object
      */
-    public int sampleMethod(int y)
+    public void putIn(Food thing)
     {
-        // put your code here
-        return x + y;
+        content = thing;
+    }
+    
+    /**
+     * Starts time, which is set based on what food is in the microwave, displays the countdown, and tells the user when the microwave is done.
+     * 
+     */
+    public void microwave()
+    {
+        
     }
 }
