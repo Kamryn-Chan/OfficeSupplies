@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=Food
 comment0.text=\n\ Class\ Food\ creates\ food\ objects\ that\ are\ put\ in\ a\ Microwave\ object.\n\n\ @Sharon\ Chou\ &\ Kamryn\ Chan\n\ @2023-01-30\n
-comment1.params=
-comment1.target=Food()
+comment1.params=name\ time
+comment1.target=Food(java.lang.String,\ int)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Food\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
-comment2.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\n
-numComments=3
+comment2.params=
+comment2.target=int\ getTime()
+comment2.text=\n\ Gets\ the\ time\ this\ food\ needs\ to\ be\ heated.\n\n\ @return\ \ \ \ time\ needed\n
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment3.text=\n\ Gets\ the\ name\ of\ the\ food\n\ \n\ @return\ name\ of\ the\ food\n
+numComments=4

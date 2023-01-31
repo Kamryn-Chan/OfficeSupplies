@@ -9,7 +9,8 @@ public class OfficeSuppliesTester
 {
     public static void main (String[] args)
     {
-        System.out.println("Testing the pen!");
+        /**
+         * System.out.println("Testing the pen!");
         Pen p = new Pen();
         System.out.println("Words left: " + p.getWordsLeft());
         System.out.println("Trying to write now...");
@@ -29,5 +30,6 @@ public class OfficeSuppliesTester
         System.out.println("You didn't cap your pen after writing! Minus 5 words. Words left: " + p.getWordsLeft());
         System.out.println("Trying to write even though I have no ink...");
         p.writeWords(10);
+         */
     }
 }

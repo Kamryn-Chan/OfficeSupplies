@@ -7,27 +7,35 @@
  */
 public class Food
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private String name;
+    private int time;
 
     /**
      * Constructor for objects of class Food
      */
-    public Food()
+    public Food(String name, int time)
     {
-        // initialise instance variables
-        x = 0;
+        this.name = name;
+        this.time = time;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Gets the time this food needs to be heated.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return    time needed
      */
-    public int sampleMethod(int y)
+    public int getTime()
     {
-        // put your code here
-        return x + y;
+       return time;
+    }
+    
+    /**
+     * Gets the name of the food
+     * 
+     * @return name of the food
+     */
+    public String getName()
+    {
+        return name;
     }
 }

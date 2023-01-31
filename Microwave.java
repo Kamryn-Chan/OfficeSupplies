@@ -7,9 +7,8 @@
  */
 public class Microwave
 {
-    // instance variables - replace the example below with your own
     private int timeSet;
-    private Food content;
+    private String content;
 
     /**
      * Constructor for objects of class Microwave
@@ -26,7 +25,8 @@ public class Microwave
      */
     public void putIn(Food thing)
     {
-        content = thing;
+        content = thing.getName();
+        timeSet = thing.getTime();
     }
     
     /**
@@ -35,6 +35,53 @@ public class Microwave
      */
     public void microwave()
     {
-        
+        for (int i = timeSet; i >=0; i--)
+        {
+        String display = "";
+        display += (int) timeSet/60 + ":";
+         if ((int)timeSet%60 < 10)
+         {
+             display += "0" + (int)timeSet%60;
+         }
+         else
+         {
+             display += (int)timeSet%60;
+         }
+         System.out.println(display); 
+         sleep(900);
+         clearConsole();
+        }
     }
+    
+     /**
+ * The clearConsole method attemps to clear the Terminal so that
+ * successive generations of the board can be displayed. The ANSI
+ * escape sequence printed here only works in Terminals that support
+ * them. BlueJ doesn't, but if you run this code in a regular 
+ * Terminal window, it might work!
+ */
+private static void clearConsole()
+{
+    try {
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();
+    }
+    catch (Exception exception)
+    {
+        System.out.println("Error");
+        //  Handle exception.
+    }
+}
+
+public static void sleep(int milliseconds)
+{
+    try
+    {
+        Thread.sleep(milliseconds);
+    }
+    catch(InterruptedException ex)
+    {
+        Thread.currentThread().interrupt();
+    }
+}
 }
