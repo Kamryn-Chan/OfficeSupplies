@@ -167,5 +167,23 @@ public class Inbox
         {
             inboxCopy.add(inbox.get(i)); 
         }
+        while (inboxCopy.size() > 0 )
+        {
+            int maxloc = 0;
+            for (int j = 0; j < inboxCopy.size(); j++)
+            {
+                if (inboxCopy.get(j).getDate() > inboxCopy.get(maxloc).getDate())
+                {
+                    maxloc = j;
+                }
+            }
+            byDate.add(inboxCopy.remove(maxloc));
+        }
+        String byDateList = "";
+        for (Email email: byDate)
+        {
+            byDateList += email.toString();
+        }
+        return byDateList;
     }
 }
