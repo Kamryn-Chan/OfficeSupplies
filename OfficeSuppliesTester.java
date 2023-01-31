@@ -31,5 +31,15 @@ public class OfficeSuppliesTester
         System.out.println("Trying to write even though I have no ink...");
         p.writeWords(10);
          */
+        
+        // Microwave has to be tested in terminal
+        System.out.println("Testing the microwave!");
+        Food popcorn = new Food("popcorn", 361);
+        Food spag = new Food("spaghetti", 187);
+        Food coffee = new Food("coffee", 38);
+        Microwave m = new Microwave();
+        System.out.println("Microwaving the popcorn...");
+        m.putIn(popcorn);
+        m.microwave();
     }
 }

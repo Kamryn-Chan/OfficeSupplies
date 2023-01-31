@@ -35,22 +35,28 @@ public class Microwave
      */
     public void microwave()
     {
-        for (int i = timeSet; i >=0; i--)
+        int min = (int) timeSet/60;
+        int sec = (int)timeSet%60;
+        for (int i = min; i >= 0; i--)
         {
-        String display = "";
-        display += (int) timeSet/60 + ":";
-         if ((int)timeSet%60 < 10)
-         {
-             display += "0" + (int)timeSet%60;
-         }
-         else
-         {
-             display += (int)timeSet%60;
-         }
-         System.out.println(display); 
-         sleep(900);
-         clearConsole();
+            for (int j = sec; j >=0; j--)
+            {
+                String display = "";
+                display += min + ":";
+                if (sec < 10)
+                {
+                     display += "0" + sec;
+                }
+                else
+                {
+                     display += sec;
+                }
+                clearConsole();
+                System.out.println(display); 
+                sleep(100);
+            }
         }
+        System.out.println("Ding ding ding! Your " + content + " is ready!");
     }
     
      /**
