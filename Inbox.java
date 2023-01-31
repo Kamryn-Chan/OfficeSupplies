@@ -1,14 +1,15 @@
 
 /**
- * Write a description of class Inbox here.
+ * The Inbox class keeps track of a list of email objects.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Sharon Chou & Kamryn Chan
+ * @version 2023-01-30
  */
+import java.util.ArrayList;
 public class Inbox
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private ArrayList<Email> inbox;
 
     /**
      * Constructor for objects of class Inbox
@@ -16,18 +17,155 @@ public class Inbox
     public Inbox()
     {
         // initialise instance variables
-        x = 0;
+        inbox = new ArrayList<Email>();
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public void starEmail(String subject)
     {
         // put your code here
-        return x + y;
+        for (Email email: inbox)
+        {
+            if (email.getSubject().equals(subject))
+            {
+                email.star();
+            }
+        }
+    }
+    
+    public void unstarEmail(String subject)
+    {
+        // put your code here
+        for (Email email: inbox)
+        {
+            if (email.getSubject().equals(subject))
+            {
+                email.unstar();
+            }
+        }
+    }
+    
+    public void deleteEmail(String subject)
+    {
+        // put your code here
+        for (int i = 0; i < inbox.size(); i++)
+        {
+            if (inbox.get(i).getSubject().equals(subject))
+            {
+                inbox.get(i).delete();
+            }
+        }
+    }
+    
+    public void recoverEmail(String subject)
+    {
+        // put your code here
+        for (int i = 0; i < inbox.size(); i++)
+        {
+            if (inbox.get(i).getSubject().equals(subject))
+            {
+                inbox.get(i).undelete();
+            }
+        }
+    }
+    
+    public void readEmail(String subject)
+    {
+        // put your code here
+        for (int i = 0; i < inbox.size(); i++)
+        {
+            if (inbox.get(i).getSubject().equals(subject))
+            {
+                inbox.get(i).read();
+            }
+        }
+    }
+    
+    public void unreadEmail(String subject)
+    {
+        // put your code here
+        for (int i = 0; i < inbox.size(); i++)
+        {
+            if (inbox.get(i).getSubject().equals(subject))
+            {
+                inbox.get(i).unread();
+            }
+        }
+    }
+    
+    public String showInbox()
+    {
+        String list = "";
+        for (Email email : inbox)
+        {
+            list += email.toString();
+            list += "\n";
+        }
+        return list;
+    }
+    
+    public String showStarred()
+    {
+        String starred = "";
+        for (Email email : inbox)
+        {
+            if (email.getStarred())
+            {
+                starred += email.toString();
+                starred+= "\n";
+            }
+        }
+        return starred;
+    }
+    
+    public String showDeleted()
+    {
+        String deleted = "";
+        for (Email email : inbox)
+        {
+            if (email.getDeleted())
+            {
+                deleted += email.toString();
+                deleted+= "\n";
+            }
+        }
+        return deleted;
+    }
+    
+    public String showUnread()
+    {
+        String unread = "";
+        for (Email email : inbox)
+        {
+            if (!email.getRead())
+            {
+                unread += email.toString();
+                unread += "\n";
+            }
+        }
+        return unread;
+    }
+    
+    public String searchSender(String sender)
+    {
+        String senderList = "";
+        for (Email email : inbox)
+        {
+            if (email.getSender().equals(sender))
+            {
+                senderList += email.toString();
+                senderList += "\n";
+            }
+        }
+        return senderList;
+    }
+    
+    public String sortByDate()
+    {
+        ArrayList<Email> byDate = new ArrayList<Email>();
+        ArrayList<Email> inboxCopy = new ArrayList<Email>();
+        for (int i = 0; i < inbox.size(); i++)
+        {
+            inboxCopy.add(inbox.get(i)); 
+        }
     }
 }

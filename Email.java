@@ -77,7 +77,8 @@ public class Email
     
     public void read()
     {
-      read = true;  
+        System.out.println(message);
+        read = true;  
     }
     
     public void unread()
@@ -93,5 +94,11 @@ public class Email
     public void undelete()
     {
         deleted = false;
+    }
+    
+    public String toString()
+    {
+        String emails = sender + " - " + subject + " - " + date + " days ago";
+        return emails;
     }
 }
