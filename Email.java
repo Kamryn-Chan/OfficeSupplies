@@ -1,33 +1,97 @@
 
 /**
- * Write a description of class Email here.
+ * Class Email makes objects that are put in an Inbox object.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Sharon Chou & Kamryn Chan
+ * @2023-01-30
  */
 public class Email
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private String sender;
+    private int date; //days ago it was sent
+    private String subject;
+    private String message;
+    //flags for the email objects:
+    private boolean starred;
+    private boolean read;
+    private boolean deleted; 
 
     /**
      * Constructor for objects of class Email
      */
-    public Email()
+    public Email(String sender, int date, String subject, String message)
     {
-        // initialise instance variables
-        x = 0;
+       this.sender = sender;
+       this.date = date;
+       this.subject = subject;
+       this.message = message;
+       starred = false;
+       read = false;
+       deleted = false;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public String getSender()
     {
-        // put your code here
-        return x + y;
+        return sender;
+    }
+    
+    public int getDate()
+    {
+        return date;
+    }
+    
+    public String getSubject()
+    {
+        return subject;
+    }
+    
+    public String getMessage()
+    {
+        return message;
+    }
+    
+    public boolean getStarred()
+    {
+        return starred;
+    }
+    
+    public boolean getRead()
+    {
+        return read;
+    }
+    
+    public boolean getDeleted()
+    {
+        return deleted;
+    }
+    
+    public void star()
+    {
+       starred = true; 
+    }
+    
+    public void unstar()
+    {
+        starred = false;
+    }
+    
+    public void read()
+    {
+      read = true;  
+    }
+    
+    public void unread()
+    {
+        read = false;
+    }
+    
+    public void delete()
+    {
+        deleted = true;
+    }
+    
+    public void undelete()
+    {
+        deleted = false;
     }
 }
