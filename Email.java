@@ -157,6 +157,14 @@ public class Email
     public String toString()
     {
         String emails = sender + " - " + subject + " - " + date + " days ago";
+        if (starred)
+        {
+            emails += "- starred";
+        }
+        if (!read)
+        {
+            emails += "- UNREAD";
+        }
         return emails;
     }
 }
