@@ -20,6 +20,11 @@ public class Inbox
         inbox = new ArrayList<Email>();
     }
 
+    /**
+     * Stars the email by setting the starred instance variable to true.
+     * 
+     * @param subject line of that email
+     */
     public void starEmail(String subject)
     {
         // put your code here
@@ -32,6 +37,11 @@ public class Inbox
         }
     }
     
+    /**
+     * Unstars the email by setting the starred instance variable to false.
+     * 
+     * @param subject line of that email
+     */
     public void unstarEmail(String subject)
     {
         // put your code here
@@ -44,6 +54,11 @@ public class Inbox
         }
     }
     
+    /**
+     * Deletes the email by setting the deleted instance variable to true.
+     * 
+     * @param subject line of that email
+     */
     public void deleteEmail(String subject)
     {
         // put your code here
@@ -56,6 +71,11 @@ public class Inbox
         }
     }
     
+    /**
+     * Undeletes the email by setting the deleted instance variable to false.
+     * 
+     * @param subject line of that email
+     */
     public void recoverEmail(String subject)
     {
         // put your code here
@@ -68,6 +88,11 @@ public class Inbox
         }
     }
     
+    /**
+     * Reads the email by setting the read instance variable to true.
+     * 
+     *  @param subject line of that email
+     */
     public void readEmail(String subject)
     {
         // put your code here
@@ -80,6 +105,11 @@ public class Inbox
         }
     }
     
+    /**
+     * Unreads the email by setting the read instance variable to false.
+     * 
+     * @param subject line of that email
+     */
     public void unreadEmail(String subject)
     {
         // put your code here
@@ -92,6 +122,11 @@ public class Inbox
         }
     }
     
+    /**
+     * Returns a String with all the emails in the inbox arraylist and their information.
+     * 
+     * @return String of all emails
+     */
     public String showInbox()
     {
         String list = "";
@@ -103,6 +138,11 @@ public class Inbox
         return list;
     }
     
+    /**
+     * Returns a String with all starred emails and their info.
+     * 
+     * @return String of starred emails
+     */
     public String showStarred()
     {
         String starred = "";
@@ -117,6 +157,11 @@ public class Inbox
         return starred;
     }
     
+    /**
+     * Returns a String with all deleted emails and their info.
+     * 
+     * @return String of deleted emails
+     */
     public String showDeleted()
     {
         String deleted = "";
@@ -131,6 +176,11 @@ public class Inbox
         return deleted;
     }
     
+    /**
+     * Returns a String with all unread emails and their info.
+     * 
+     * @return String of unread emails
+     */
     public String showUnread()
     {
         String unread = "";
@@ -145,6 +195,12 @@ public class Inbox
         return unread;
     }
     
+    /**
+     * Returns a String with all emails from a specific sender and their info.
+     * 
+     * @return String of emails from a specific person.
+     * @param the person
+     */
     public String searchSender(String sender)
     {
         String senderList = "";
@@ -159,6 +215,11 @@ public class Inbox
         return senderList;
     }
     
+    /**
+     * Returns a String of all emails sorted by date.
+     * 
+     * @return String of emails from earliest to latest sent.
+     */
     public String sortByDate()
     {
         ArrayList<Email> byDate = new ArrayList<Email>();

@@ -31,7 +31,6 @@ public class Microwave
     
     /**
      * Starts time, which is set based on what food is in the microwave, displays the countdown, and tells the user when the microwave is done.
-     * 
      */
     public void microwave()
     {
@@ -88,6 +87,11 @@ private static void clearConsole()
     }
 }
 
+/**
+ * Pauses the program for a number of milliseconds.
+ * 
+ * @param number of milliseconds
+ */
 public static void sleep(int milliseconds)
 {
     try
