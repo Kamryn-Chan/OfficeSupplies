@@ -59,13 +59,29 @@ public class OfficeSuppliesTester
         Email e = new Email("Mr. White", 1, "Project extension?", "Sure!");
         Email bulletin = new Email("Ms. Williams", 8, "Student bulletin", "Bulletin for this week!");
         Email spam = new Email("CollegeBoard", 12, "Earn $60 in 5 minutes", "Opportunities for your future!");
-        Email festival = new Email("Ms. Chung", 3, "Chinese New Year festival recording", "Enjoy!");
-        Email meeting = new Email("KOB", 5, "HW due date change", "Due Friday now!");
+        i.addEmail(e);
+        i.addEmail(bulletin);
+        i.addEmail(spam);
+        i.addEmail("Ms. Chung", 3, "Chinese New Year festival recording", "Enjoy!");
+        i.addEmail("KOB", 5, "HW due date change", "Due Friday now!");
         System.out.println("Displaying the inbox...\n");
         System.out.println(i.showInbox());
         System.out.println("Starring the Chinese New Year and student bulletin emails...\n");
         i.starEmail("Chinese New Year festival recording");
         i.starEmail("Student bulletin");
-        System.out.println(i.showInbox());
+        System.out.println("Showing only starred emails:");
+        System.out.println(i.showStarred());
+        
+        i.deleteEmail("Project extension?");
+        i.deleteEmail("Earn $60 in 5 minutes");
+        System.out.println(i.showDeleted());
+        i.recoverEmail("Project extension?");
+        System.out.println(i.showDeleted());
+        System.out.println(i.showNotDeleted());
+        
+        i.readEmail("Student bulletin");
+        System.out.println(i.showUnread());
+        System.out.println(i.searchSender("KOB"));
+        System.out.println(i.sortByDate());
     }
 }

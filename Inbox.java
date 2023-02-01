@@ -21,6 +21,27 @@ public class Inbox
     }
 
     /**
+     * Adds emails to the inbox.
+     * 
+     * @param premade Email object.
+     */
+    public void addEmail(Email email)
+    {
+        inbox.add(email);
+    }
+    
+    /**
+     * Adds emails to the inbox.
+     * 
+     * @param parameters of Email object to be made in method and then added to Inbox.
+     */
+    public void addEmail(String sender, int date, String subject, String message)
+    {
+        Email e = new Email(sender, date, subject, message);
+        inbox.add(e);
+    }
+    
+    /**
      * Stars the email by setting the starred instance variable to true.
      * 
      * @param subject line of that email
@@ -174,6 +195,25 @@ public class Inbox
             }
         }
         return deleted;
+    }
+    
+    /**
+     * Returns a String with all not deleted emails and their info.
+     * 
+     * @return String of not deleted emails
+     */
+    public String showNotDeleted()
+    {
+        String undeleted = "";
+        for (Email email : inbox)
+        {
+            if (!email.getDeleted())
+            {
+                undeleted += email.toString();
+                undeleted+= "\n";
+            }
+        }
+        return undeleted;
     }
     
     /**
