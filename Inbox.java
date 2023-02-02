@@ -261,7 +261,7 @@ public class Inbox
     /**
      * Returns a String of emails in the inbox (not including trash) sorted by date.
      * 
-     * @return String of emails from earliest to latest sent.
+     * @return String of emails from latest to earliest sent.
      */
     public String sortByDate()
     {

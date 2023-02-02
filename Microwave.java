@@ -67,7 +67,7 @@ public class Microwave
         System.out.println("Ding ding ding! Your " + content + " is ready!");
     }
     
-     /**
+/**
  * The clearConsole method attemps to clear the Terminal so that
  * successive generations of the board can be displayed. The ANSI
  * escape sequence printed here only works in Terminals that support

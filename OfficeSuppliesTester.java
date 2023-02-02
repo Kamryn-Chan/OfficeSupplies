@@ -31,8 +31,8 @@ public class OfficeSuppliesTester
         System.out.println("\nTrying to write again...");
         p.writeWords(10);
         
-        /*
-        // Microwave has to be tested in terminal
+    
+        // Microwave has to be tested in terminal!
         System.out.println("\nTesting the microwave! It should be tested in terminal");
         Food popcorn = new Food("popcorn", 126);
         Food spag = new Food("spaghetti", 187);
@@ -50,7 +50,6 @@ public class OfficeSuppliesTester
         m.putIn(coffee);
         m.microwave();
         System.out.println("Bon apetit!");
-        */
        
         System.out.println("\nTesting the inbox! \n");
         System.out.println("Initializing an inbox and creating email objects to add...");
