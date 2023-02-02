@@ -153,8 +153,11 @@ public class Inbox
         String list = "";
         for (Email email : inbox)
         {
-            list += email.toString();
-            list += "\n";
+            if (!email.getDeleted())
+            {
+                list += email.toString();
+                list += "\n";
+            }
         }
         return list;
     }
@@ -169,7 +172,7 @@ public class Inbox
         String starred = "";
         for (Email email : inbox)
         {
-            if (email.getStarred())
+            if (email.getStarred() && !email.getDeleted())
             {
                 starred += email.toString();
                 starred+= "\n";
@@ -246,7 +249,7 @@ public class Inbox
         String senderList = "";
         for (Email email : inbox)
         {
-            if (email.getSender().equals(sender))
+            if (email.getSender().equals(sender) && !email.getDeleted())
             {
                 senderList += email.toString();
                 senderList += "\n";

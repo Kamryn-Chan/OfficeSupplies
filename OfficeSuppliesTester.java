@@ -31,6 +31,7 @@ public class OfficeSuppliesTester
         System.out.println("\nTrying to write again...");
         p.writeWords(10);
         
+        /*
         // Microwave has to be tested in terminal
         System.out.println("\nTesting the microwave! It should be tested in terminal");
         Food popcorn = new Food("popcorn", 126);
@@ -49,7 +50,7 @@ public class OfficeSuppliesTester
         m.putIn(coffee);
         m.microwave();
         System.out.println("Bon apetit!");
-        
+        */
        
         System.out.println("\nTesting the inbox! \n");
         System.out.println("Initializing an inbox and creating email objects to add...");
@@ -80,14 +81,14 @@ public class OfficeSuppliesTester
         i.deleteEmail("Earn $60 in 5 minutes");
         System.out.println(i.showDeleted());
         
-        System.out.println("Recovering the project extension email and showing all emails that have not been deleted...");
+        System.out.println("Recovering the project extension email and showing all emails in the inbox (not deleted)...");
         i.recoverEmail("Project extension?");
         System.out.println(i.showNotDeleted());
         
-        System.out.println("Reading the student bulletin email...\n");
+        System.out.println("Reading the student bulletin email...");
         i.readEmail("Student bulletin");
         
-        System.out.println("Displaying the unread emails in the inbox...");
+        System.out.println("\nDisplaying the unread emails in the inbox...");
         System.out.println(i.showUnread());
         
         System.out.println("Searching the inbox for emails from KOB...");
