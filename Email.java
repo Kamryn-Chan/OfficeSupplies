@@ -159,11 +159,15 @@ public class Email
         String emails = sender + " - " + subject + " - " + date + " days ago";
         if (starred)
         {
-            emails += "- starred";
+            emails += " - STARRED";
         }
         if (!read)
         {
-            emails += "- UNREAD";
+            emails += " - UNREAD";
+        }
+        if (deleted)
+        {
+            emails += " - TRASH";
         }
         return emails;
     }

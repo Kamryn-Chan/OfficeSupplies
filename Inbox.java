@@ -226,7 +226,7 @@ public class Inbox
         String unread = "";
         for (Email email : inbox)
         {
-            if (!email.getRead())
+            if (!email.getRead() && !email.getDeleted())
             {
                 unread += email.toString();
                 unread += "\n";
@@ -256,7 +256,7 @@ public class Inbox
     }
     
     /**
-     * Returns a String of all emails sorted by date.
+     * Returns a String of emails in the inbox (not including trash) sorted by date.
      * 
      * @return String of emails from earliest to latest sent.
      */
@@ -266,14 +266,17 @@ public class Inbox
         ArrayList<Email> inboxCopy = new ArrayList<Email>();
         for (int i = 0; i < inbox.size(); i++)
         {
-            inboxCopy.add(inbox.get(i)); 
+            if (!inbox.get(i).getDeleted())
+            {
+                inboxCopy.add(inbox.get(i)); 
+            }
         }
         while (inboxCopy.size() > 0 )
         {
             int maxloc = 0;
             for (int j = 0; j < inboxCopy.size(); j++)
             {
-                if (inboxCopy.get(j).getDate() > inboxCopy.get(maxloc).getDate())
+                if (inboxCopy.get(j).getDate() < inboxCopy.get(maxloc).getDate())
                 {
                     maxloc = j;
                 }
@@ -284,6 +287,7 @@ public class Inbox
         for (Email email: byDate)
         {
             byDateList += email.toString();
+            byDateList += "\n";
         }
         return byDateList;
     }
